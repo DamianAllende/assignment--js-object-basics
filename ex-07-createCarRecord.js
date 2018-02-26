@@ -19,7 +19,50 @@
 **/
 
 
+function createCarRecord (one, two, three, four){
+	
+	let newObj = []
+	let makeObj = one
+	let modelObj = two
+	let yearObj = three
+	let licenseObj = four
 
+
+	if((typeof makeObj === 'string') &&  
+			(typeof modelObj === 'string') &&
+			(typeof yearObj === 'number') && 
+			(typeof licenseObj === 'string')){
+
+
+			let param = {
+			make: makeObj,
+			model: modelObj,
+			year: yearObj,
+			license: licenseObj
+			}
+
+			newObj = param
+			//console.log(typeof newObj)
+			return newObj
+		}
+
+
+	//console.log(typeof makeObj)
+	if(!makeObj || !modelObj || !yearObj || !licenseObj){
+		newObj = 'new record must have make, model, year, and license values'
+		return newObj
+	}
+
+	if (typeof yearObj === 'string'){
+		return newObj = '3rd argument must be a Number'
+	}
+
+	if ((typeof yearObj !== false)){ 
+		return newObj = '1st, 2nd, and 4th arguments must be String'
+	}
+
+
+} 
 
 
 
